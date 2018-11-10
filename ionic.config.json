@@ -1,0 +1,7 @@
+{
+  "name": "pro-sqlite",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

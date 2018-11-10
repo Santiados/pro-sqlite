@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-navbar color="primary"#navbar>
+  	<button ion-button menuToggle>
+      	<ion-icon name="menu"></ion-icon>
+  	</button>
+    <ion-title>
+      Tareas de {{userData.username}}
+    </ion-title>
+    <ion-buttons right>
+    	<button ion-button round (click)="openAdder()" color="light">
+    		<ion-icon name="add-circle"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-nav [root]="rootPage" [rootParams]="rootPageParams"></ion-nav>
+<ion-content padding>
+<ion-list>
+	<ion-item *ngIf="tasks == 0">
+		No hay ninguna tarea aún
+	</ion-item>
+	<ion-item-sliding *ngFor="let task of tasks; let i = index">
+		<ion-item>
+			<ion-label>{{task.title}}</ion-label>
+			<ion-checkbox (ionChange)="updateTask(task, i)" [checked]="task.completed"></ion-checkbox>
+		</ion-item>
+		<ion-item-options side="right" icon-left>
+			<ion-buttons>
+				<button ion-button round (click)="editTask(task,i)">
+				<ion-icon name="settings" icon-left></ion-icon>
+				</button>
+				<button ion-button round color="danger" (click)="deleteTask(task,i)">
+					<ion-icon name="trash" icon-left></ion-icon>
+				</button>
+			</ion-buttons>
+		</ion-item-options>
+	</ion-item-sliding>
+</ion-list>
+  
+</ion-content>

@@ -1,0 +1,26 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Lobby
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
+<ion-content padding>
+<form>
+	<ion-item>
+		<ion-input type="text" placeholder="Escribe tu nombre" name="username" [(ngModel)]="userData.username" ></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-input type="password" placeholder="Escribe tu pass" name="password" [(ngModel)]="userData.password" ></ion-input>
+	</ion-item>
+</form>
+	<button ion-button (click)="getUserByCredentials()" left round full margin-bottom>
+		Entrar
+	</button>
+	<button ion-button (click)="createUser()" right color="secondary" full>
+		Registrarme
+	</button>
+  
+</ion-content>
