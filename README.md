@@ -15,10 +15,6 @@ Install Cordova
 
 $ npm install -g cordova
 
-Clone this repo
-
-$ git clone https://github.com/mtfaroks/ionic-Projects.git
-
 cd into the githubionic folder run npm install
 
 $ npm install
